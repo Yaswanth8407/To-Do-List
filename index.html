@@ -11,50 +11,78 @@
 
 <body>
     <div class="interfaceOuterContainer">
-        <!-- <div class="interfaceinnerContainer"> -->
 
-            <div class="headdiv">
-                <div class="appname">📝 My To-Do List</div>
-                <button class="modeswitch"><i class="ri-moon-line"></i></button>
+        <div class="headdiv">
+            <div class="appname">📝 My To-Do List</div>
+            <button class="modeswitch"><i class="ri-moon-line"></i></button>
+        </div>
+
+        <div class="progresswrap">
+            <div class="progressandcompletion">
+                <div class="progress">Progress</div>
+                <div class="completions">0 / 0 tasks</div>
             </div>
+            <div class="progressbar"><input type="range" value="50"></div>
+        </div>
 
-            <div class="progresswrap">
-                <div class="progressandcompletion">
-                    <div class="progress">Progress</div>
-                    <div class="completions">0 / 0 tasks</div>
+        <div class="addtasks">
+            <input type="text" name="" id="" placeholder="Add a new task...">
+            <select name="" id="">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button>+</button>
+        </div>
+
+        <div class="search-box">
+            <i class="ri-search-line"></i>
+            <input type="text" placeholder="    Search tasks...">
+        </div>
+
+        <div class="addedtasksouter">
+
+            <div class="filterandsort">
+                <div class="categories">
+                    <button class="all filter">All (6)</button>
+                    <button class="pending filter">Pending (2)</button>
+                    <button class="completed filter">Completed (4)</button>
                 </div>
-                <div class="progressbar"><input type="range" value="50"></div>
-            </div>
-
-            <div class="addtasks">
-                <input type="text" name="" id="" placeholder="Add a new task...">
-                <select name="" id="">
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                </select>
-                <button>+</button>
-            </div>
-
-            <div class="search-box">
-                <i class="ri-search-line"></i>
-                <input type="text" placeholder="    Search tasks...">
-            </div>
-
-            <div class="addedtasksouter">
-                <div class="filterandsort">
-                    <div class="categories">
-                        <div class="all"></div>
-                        <div class="pending"></div>
-                        <div class="completed"></div>
-                    </div>
+                <div class="sort">
+                    <span>Sort by: </span>
+                    <select name="" id="">
+                        <option value="Date">Date</option>
+                        <option value="Priority">Priority</option>
+                    </select>
                 </div>
             </div>
 
+            <button class="clearcompleted">Clear Completed (4)</button>
+
+            <div class="addedtask">
+                <div class="check">
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div class="taskandtime">
+                    <div class="task">Creating my own listt</div>
+                    <div class="timecreated">5 mins ago</div>
+                </div>
+                <div class="tools">
+                    <select name="" id="">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <button class="edit"><i class="ri-pencil-line"></i></button>
+                    <button class="delete"><i class="ri-delete-bin-line"></i></button>
+                </div>
+            </div>
+
+        </div>
 
 
-        <!-- </div> -->
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -26,6 +26,7 @@ body {
     background-color: white;
     min-height: 80vh;
     width: 40%;
+    max-width: 40%;
     border-radius: 30px;
     padding: 4.5vh;
     display: flex;
@@ -69,6 +70,7 @@ body {
 
 .progresswrap input {
     width: 100%;
+    /* pointer-events: none; */
 }
 
 .addtasks {
@@ -88,6 +90,10 @@ body {
     font-size: 1rem;
 }
 
+.addtasks input:hover {
+    border: 2px solid blue;
+}
+
 .addtasks select {
     height: 6.3vh;
     border: 2px solid var(--border);
@@ -104,7 +110,6 @@ body {
     border: 2px solid var(--border);
     border-radius: var(--brrad);
     background-color: var(--elbg);
-    color: var(--textcolor);
     padding: var(--elpdng);
     font-size: 2rem;
     padding-bottom: 5px;
@@ -134,7 +139,6 @@ body {
 
 .search-box input {
     padding: var(--elpdng) 0;
-    width: 100%;
     font-size: 15px;
     border-radius: 12px;
     outline: none;
@@ -145,14 +149,159 @@ body {
     width: 100%;
 }
 
-.addedtasksouter{
+.addedtasksouter {
     position: relative;
     width: 100%;
     min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
 }
 
-.filterandsort{
+.filterandsort {
     height: 5vh;
     width: 100%;
-    border: 3px solid #3c3c3c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categories {
+    display: flex;
+    min-width: 40%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.filter {
+    height: 5vh;
+    padding: 0 2vh;
+    border: 2px solid var(--border);
+    border-radius: var(--brrad);
+    background-color: var(--elbg);
+    display: flex;
+    align-items: center;
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sort span {
+    opacity: 0.75;
+    font-size: small;
+}
+
+.sort select {
+    height: 5vh;
+    padding: 0 2vh;
+    border: 2px solid var(--border);
+    border-radius: var(--brrad);
+    background-color: var(--elbg);
+}
+
+.clearcompleted {
+    position: relative;
+    color: var(--textcolor);
+    height: 5.5vh;
+    background-color: var(--elbg);
+    border: 2px solid red;
+    border-radius: var(--brrad);
+    padding: var(--elpdng);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}
+
+.clearcompleted:hover {
+    background-color: rgb(245, 101, 101);
+    color: white;
+}
+
+.addedtask {
+    position: relative;
+    min-height: 8vh;
+    padding: var(--elpdng);
+    border: 2px solid var(--border);
+    border-radius: var(--brrad);
+    background-color: var(--elbg);
+    display: flex;
+    gap: 2%;
+    align-items: center;
+    border-left: 5px solid red;
+}
+
+.check {
+    position: relative;
+    height: 30%;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check input[type="checkbox"] {
+    border: 2px solid var(--border);
+    height: 100%;
+    width: 100%;
+}
+
+.taskandtime {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+}
+
+.timecreated {
+    display: flex;
+    align-items: center;
+    font-size: small;
+    opacity: 0.5;
+}
+
+.tools {
+    position: relative;
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tools select {
+    height: 4vh;
+    /* outline: none; */
+    border: 2px solid var(--border);
+    border-radius: 7px;
+    background-color: var(--elbg);
+    color: var(--textcolor);
+    padding: var(--elpdng);
+    font-size: 1rem;
+}
+
+.tools button {
+    height: 4vh;
+    font-size: large;
+    border-radius: 5px;
+    border: 2px solid var(--border);
+    background-color: var(--elbg);
+    color: var(--textcolor);
+    padding: 0 0.75vw;
+}
+
+.edit i {
+    color: #ed8936;
+}
+
+.delete i {
+    color: #f56565;
 }
