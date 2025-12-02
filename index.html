@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do-List</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
 </head>
+
 <body>
     <div class="interfaceOuterContainer">
-        <div class="interfaceinnerContainer">
+        <!-- <div class="interfaceinnerContainer"> -->
 
             <div class="headdiv">
-                <div class="appname"></div>
-                <div class="taskcompletions"></div>
+                <div class="appname">📝 My To-Do List</div>
+                <button class="modeswitch"><i class="ri-moon-line"></i></button>
             </div>
 
-            <div class="progerssandcompletion">
-                <div class="progress"></div>
-                <div class="completions"></div>
+            <div class="progresswrap">
+                <div class="progressandcompletion">
+                    <div class="progress">Progress</div>
+                    <div class="completions">0 / 0 tasks</div>
+                </div>
+                <div class="progressbar"><input type="range" value="50"></div>
             </div>
 
-            <div class="progressbar"></div>
+            <div class="addtasks">
+                <input type="text" name="" id="" placeholder="Add a new task...">
+                <select name="" id="">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button>+</button>
+            </div>
 
-            
+            <div class="search-box">
+                <i class="ri-search-line"></i>
+                <input type="text" placeholder="    Search tasks...">
+            </div>
 
-        </div>
+            <div class="addedtasksouter">
+                <div class="filterandsort">
+                    <div class="categories">
+                        <div class="all"></div>
+                        <div class="pending"></div>
+                        <div class="completed"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <!-- </div> -->
     </div>
 </body>
+
 </html>

@@ -1,5 +1,158 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    overflow-y: scroll;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --grcolor1: #667ee9;
+    --grcolor2: #764ba2;
+    --textcolor: #3c3c3c;
+    --border: #dee4ec;
+    --elbg: #f7fafc;
+    --brrad: 12px;
+    --elpdng: 0 1vw;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 4vh;
+    background: linear-gradient(to right, var(--grcolor1), var(--grcolor2));
+}
+
+.interfaceOuterContainer {
+    position: relative;
+    background-color: white;
+    min-height: 80vh;
+    width: 40%;
+    border-radius: 30px;
+    padding: 4.5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.headdiv {
+    position: relative;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modeswitch {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--elbg);
+    font-size: 1.3rem;
+    height: 47px;
+    width: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--textcolor);
+}
+
+.progresswrap {
+    height: 5vh;
+    position: relative;
+}
+
+.progressandcompletion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.8;
+    font-size: 0.8rem;
+}
+
+.progresswrap input {
+    width: 100%;
+}
+
+.addtasks {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addtasks input {
+    height: 6vh;
+    width: 65%;
+    background-color: var(--elbg);
+    border: 2px solid var(--border);
+    border-radius: var(--brrad);
+    padding: var(--elpdng);
+    font-size: 1rem;
+}
+
+.addtasks select {
+    height: 6.3vh;
+    border: 2px solid var(--border);
+    border-radius: var(--brrad);
+    background-color: var(--elbg);
+    color: var(--textcolor);
+    padding: var(--elpdng);
+    font-size: 1rem;
+}
+
+.addtasks button {
+    height: 6.3vh;
+    width: 10%;
+    border: 2px solid var(--border);
+    border-radius: var(--brrad);
+    background-color: var(--elbg);
+    color: var(--textcolor);
+    padding: var(--elpdng);
+    font-size: 2rem;
+    padding-bottom: 5px;
+    background: linear-gradient(135deg, var(--grcolor1), var(--grcolor2));
+    color: white;
+}
+
+.search-box {
+    position: relative;
+    color: var(--textcolor);
+    height: 5.5vh;
+    background-color: var(--elbg);
+    border: 2px solid var(--border);
+    border-radius: var(--brrad);
+    padding: var(--elpdng);
+    display: flex;
+    align-items: center;
+}
+
+.search-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: black;
+}
+
+.search-box input {
+    padding: var(--elpdng) 0;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background-color: var(--elbg);
+    opacity: 0.85;
+    height: 100%;
+    width: 100%;
+}
+
+.addedtasksouter{
+    position: relative;
+    width: 100%;
+    min-height: 50%;
+}
+
+.filterandsort{
+    height: 5vh;
+    width: 100%;
+    border: 3px solid #3c3c3c;
 }
