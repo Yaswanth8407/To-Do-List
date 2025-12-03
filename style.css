@@ -83,6 +83,7 @@ body {
 .addtasks input {
     height: 6vh;
     width: 65%;
+    color: var(--textcolor);
     background-color: var(--elbg);
     border: 2px solid var(--border);
     border-radius: var(--brrad);
@@ -180,6 +181,7 @@ body {
     border: 2px solid var(--border);
     border-radius: var(--brrad);
     background-color: var(--elbg);
+    color: var(--textcolor);
     display: flex;
     align-items: center;
 }
@@ -201,6 +203,7 @@ body {
     border: 2px solid var(--border);
     border-radius: var(--brrad);
     background-color: var(--elbg);
+    color: var(--textcolor);
 }
 
 .clearcompleted {
@@ -304,4 +307,13 @@ body {
 
 .delete i {
     color: #f56565;
+}
+
+.addedtask.completed {
+    background: #c1ffd7;
+    opacity: 0.7;
+}
+
+.addedtask.completed .task {
+    text-decoration: line-through;
 }
