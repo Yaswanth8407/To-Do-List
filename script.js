@@ -13,7 +13,7 @@ slider.addEventListener('input', e => {
 slider.dataset.value = slider.value;
 
 function taskcard(task,pri,time){
-    elbeforecard.innerHTML += `<div class="addedtask">
+    elbeforecard.innerHTML += `<div class="addedtask" data-id="${i}">
                 <div class="check">
                     <input type="checkbox" name="" class="status">
                 </div>
@@ -33,31 +33,56 @@ function taskcard(task,pri,time){
             </div>` 
 }
 
+function priline(card, priority){
+    if (priority === "Low"){
+        card.style.borderLeft = "5px solid green";
+    }
+    else if (priority === "Medium"){
+        card.style.borderLeft = "5px solid orange";
+    }
+    else {
+        card.style.borderLeft = "5px solid red";
+    }
+}
+
+
 addtask.addEventListener("click", ()=>{
+    if(giventask.value.trim() === "") return;
+
     tasks.push({
         task: giventask.value,
         priority: prio.value,
-        time: Date.now(),
+        time: new Date().toLocaleString(),
         status: "pending"
-    })
-    taskcard(tasks[i].task,tasks[i].priority,tasks[i].time)
-    console.log(tasks[i]); i++
-    giventask.value = ""
-})
+    });
+
+    taskcard(tasks[i].task, tasks[i].priority, tasks[i].time);
+
+    const cards = document.querySelectorAll(".addedtask");
+    const currentCard = cards[cards.length - 1];
+
+    priline(currentCard, tasks[i].priority);
+
+    giventask.value = "";
+    i++;
+});
+
 
 document.addEventListener("change", (e) => {
     if (e.target.matches(".addedtask .check input[type='checkbox']")) {
 
-        const card = e.target.closest(".addedtask"); // ← finds that specific card
+        const card = e.target.closest(".addedtask");
+        const id = card.dataset.id;
 
         if (e.target.checked) {
             card.classList.add("completed");
-            
+            tasks[id].status = "completed";
         } else {
             card.classList.remove("completed");
+            tasks[id].status = "pending";
         }
+
+        console.log(tasks);
     }
 });
-
-
 
