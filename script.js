@@ -4,16 +4,26 @@ const prio = document.querySelector('.addtasks select')
 const addtask = document.querySelector('.addtasks button')
 const elbeforecard = document.querySelector('.addedtasksouter')
 const tasks = []
-let i = 0
+let t = 0; let i = 0; slider.value = slidervalue();
 
+function slidervalue(){
+    if (tasks.length === 0)
+        return 0
+    else
+        return (100/((tasks.length)/i))
+}
+
+function proinnertext(){
+    document.querySelector(".completions").innerHTML = `${i} / ${tasks.length} Tasks Completed`
+}
 
 slider.addEventListener('input', e => {
-    e.target.value = e.target.dataset.value;
+    e.target.value = slidervalue();
+    proinnertext()
 });
-slider.dataset.value = slider.value;
 
 function taskcard(task,pri,time){
-    elbeforecard.innerHTML += `<div class="addedtask" data-id="${i}">
+    elbeforecard.innerHTML += `<div class="addedtask" data-id="${t}">
                 <div class="check">
                     <input type="checkbox" name="" class="status">
                 </div>
@@ -56,15 +66,13 @@ addtask.addEventListener("click", ()=>{
         status: "pending"
     });
 
-    taskcard(tasks[i].task, tasks[i].priority, tasks[i].time);
+    taskcard(tasks[t].task, tasks[t].priority, tasks[t].time);
 
     const cards = document.querySelectorAll(".addedtask");
     const currentCard = cards[cards.length - 1];
-
-    priline(currentCard, tasks[i].priority);
-
-    giventask.value = "";
-    i++;
+    priline(currentCard, tasks[t].priority);
+    giventask.value = ""; t++;
+    proinnertext()
 });
 
 
@@ -77,12 +85,19 @@ document.addEventListener("change", (e) => {
         if (e.target.checked) {
             card.classList.add("completed");
             tasks[id].status = "completed";
+            i++
+            slider.value = slidervalue();
+            proinnertext()
         } else {
             card.classList.remove("completed");
             tasks[id].status = "pending";
+            i--
+            slider.value = slidervalue();
+            proinnertext()
         }
 
         console.log(tasks);
     }
 });
+
 
